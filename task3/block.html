@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <style type="text/css">
+    body{
+        margin:0;
+        position: relative;
+        margin-top: -1.5%;
+        
+    }
+    .background{
+        position:absolute; width:100%; height:100%; z-index:-1
+    }
+        .form{
+            margin-top: 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ipt-txt{
+            font-size: 12px;
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: #f4f5f7;
+            border: 1px solid #e5e9ef;
+            overflow: auto;
+            border-radius: 4px;
+            color: #555;
+            width: 100%!important;
+            height: 65px;
+            transition: 0s;
+            padding: 5px 10px;
+            line-height: normal;
+        }
+        .msg-submit{
+            position: relative;
+            margin-top:1%;
+            width: 70px;
+            height: 64px;
+            padding: 4px 15px;
+            font-size: 14px;
+            color: #fff;
+            border-radius: 4px;
+            text-align: center;
+            background-color: #00a1d6;
+            border: 1px solid #00a1d6;
+
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+        }
+        .paging-box{
+            border-bottom: solid;
+            border-bottom-color: grey;
+            border-bottom-width: 1px;       
+            margin-left: 25%;
+            width:50%;
+        }
+        .p-box{
+            font-size: 12px;
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: #f4f5f7;
+            border: 1px solid #e5e9ef;
+            overflow: auto;
+            border-radius: 4px;
+            color: #555;
+            width: 50%;
+            height: 10%px;
+            transition: 0s;
+            padding: 5px 10px;
+            line-height: normal;
+            margin-left:25%;
+        }
+        .logout{
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            background-color: pink;
+            position: fixed;
+            right: 0;
+            top:0;
+            height: 3em;
+            width: 6em;
+        }
+        .mymsg{
+            position: fixed;
+            right: 0;
+            top:5%;
+            font-size: 0.9em;
+        }
+        .bg{
+            position: fixed;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+            font-size:1em;
+        }
+    </style>
+    <!--<link rel="stylesheet" href="http://localhost/task3/block.css">-->
+</head>
+
+<body>
+    <div class="background" id="bg"><img src="logbg.gif" width="100%" height="120%"></div>
+    <h2>コメントプレート</h2>
+    <form id="ly_form" class="form">
+        <div>
+            <label>
+                <span>Message :</span><br>
+
+                <textarea cols="80" name="msg" rows="5" placeholder="请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。" class="ipt-txt" id="message"></textarea>
+        </div>
+        <input type="submit" value="Send" class="msg-submit">
+    </form>
+    <div class="paging-box"></div>
+    <input id="logout" type="button" value="logout" class="logout">
+
+    <div class="mymsg">
+        <a href="mymessage.html">my message</a>
+    </div>
+
+    <div class="block">
+        
+        <div class="ban" id="block"></div>
+    </div>
+    <script src="display.js"></script>
+    <script src="block.js"></script>
+
+</body>

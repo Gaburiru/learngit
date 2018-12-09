@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>留言板注册</title>
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font: 16px/20px microsft yahei;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 400px;
+            padding: 40px 0;
+            position: fixed;
+            top: 50%;
+            margin-top: -200px;
+            opacity: 0.8;
+            background: linear-gradient(to bottom right, #50a3a2, #53e3a6);
+            background: -webkit-linear-gradient(to bottom right, #50a3a2, #53e3a6);
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .container input {
+            width: 320px;
+            display: block;
+            height: 36px;
+            border: 0;
+            outline: 0;
+            padding: 6px 10px;
+            line-height: 24px;
+            margin: 32px auto;
+            -webkit-transition: all 0s ease-in 0.1ms;
+            -moz-transition: all 0s ease-in 0.1ms;
+            transition: all 0s ease-in 0.1ms;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            background-color: #FFFFFF;
+            font-size: 16px;
+            color: #50a3a2;
+        }
+
+        .container input[type='submit'] {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #666666;
+            background-color: #FFFFFF;
+        }
+
+        .container input:focus {
+            width: 400px;
+        }
+
+        .container input[type='submit']:hover {
+            cursor: pointer;
+            width: 400px;
+        }
+
+        .back {
+            position: absolute;
+            right: 1%;
+            top: 1%;
+            
+        }
+
+        a {
+            TEXT-DECORATION: none;
+            color: brown;
+        }
+
+        .remsg {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            color: white;
+            padding: 2%;
+            position: relative;
+            left: 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <img src="logbg.gif" height="100%" width="100%" />
+    </div>
+    <div class="wrap">
+        <div class="container">
+            <form class="sign" id="signup_form">
+
+                <input type="text" class="" id="username" name="username" placeholder="username" required>
+                <input type="password" class="" id="password" name="password" placeholder="password" required>
+                <input type="password" class="" id="checkpwd" name="checkpwd" placeholder="check your password"
+                    required>
+
+                <input type="submit" class="" value="注册">
+
+            </form>
+            <div id="result-msg" class="remsg"></div>
+
+        </div>
+        <div class="back">
+            <a href="http://localhost/task3/index.html">返回登陆</a>
+        </div>
+
+    </div>
+    <script src="signup.js"></script>
+</body>
+
+</html>
