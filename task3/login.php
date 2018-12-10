@@ -20,7 +20,7 @@ if($username == ""||$password == ""){
     exit;
 }
 error_reporting(0);
-$connect = mysqli_connect("localhost","root","",'information');
+$connect = new mysqli("localhost","root","",'information');
 if(!$connect){
 
     $result = [
@@ -34,7 +34,7 @@ if(!$connect){
 
 
 $sql = "select username from login where username =?";
-$stmt=mysqli_prepare($connect,$sql);
+$stmt=$connect->prepare($sql);
 $stmt->bind_param("i", $username);
 $stmt->execute();
 $compare = $stmt->get_result();
@@ -51,7 +51,7 @@ if($compare->num_rows==1){
 }
 
 $sql = "select password from login where username = ?";
-$stmt=mysqli_prepare($connect,$sql);
+$stmt=$connect->prepare($sql);
 $stmt->bind_param('s', $username);
 $stmt->execute();
 $stmt->bind_result($compare1);

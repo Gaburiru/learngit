@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-$connect = mysqli_connect("localhost","root","",'information');
+$connect = new mysqli("localhost","root","",'information');
 if(!$connect){    
     $data=[
         "errcode"=>33,
@@ -20,7 +20,7 @@ else{
     $sql = "SELECT * from message order by time DESC";
     $result = mysqli_array(mysqli_query($sql));*/
     $sql = "select * from message order by time desc";
-    $query=mysqli_query($connect,$sql);
+    $query=$connect->query($sql);
     while($row=mysqli_fetch_array($query))
         $data[]=array(
             "errcode"=>0,

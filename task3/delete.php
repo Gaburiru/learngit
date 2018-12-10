@@ -10,7 +10,7 @@ $username=$_SESSION["username"];
 //var_dump($time);
 //var_dump($message);
 //var_dump($username);
-$connect = mysqli_connect("localhost","root","",'information');
+$connect = new mysqli("localhost","root","",'information');
 if(!$connect){    
     $result = [
     "errcode" => 333,
@@ -19,7 +19,7 @@ if(!$connect){
 }
 else{
     $sql="delete from message where username=? and message='$message' and time='$time'";
-    $stmt = mysqli_prepare($connect,$sql);
+    $stmt =$connect->prepare($sql);
     $stmt->bind_param('s',$username);
     $stmt->execute();   
     

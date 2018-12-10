@@ -8,7 +8,7 @@ $message=$_POST["message"];
 //判断用户登陆状态
 if(isset($_SESSION['username'])){ 
    
-    $connect = mysqli_connect("localhost","root","",'information');
+    $connect = new mysqli("localhost","root","",'information');
     if(!$connect){    
         $result = [
         "errcode" => 333,
@@ -38,7 +38,7 @@ if(isset($_SESSION['username'])){
     }
     else{
         $sql1="insert into message (username, message, time) values (?,?,now())";
-        $stmt = mysqli_prepare($connect,$sql1);
+        $stmt = $connect->prepare($sql1);
         $stmt->bind_param('ss',$_SESSION["username"],$_POST["message"]);
         $stmt->execute();   
         $result=[
