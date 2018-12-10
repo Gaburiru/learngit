@@ -8,7 +8,7 @@ function signup(event){
     const formEntries = new FormData(signup_form).entries();
     const json = Object.assign(...Array.from(formEntries, ([x,y]) => ({[x]:y})));
 
-    fetch('http://localhost/task3/signup.php', {
+    fetch('signup.php', {
         method: 'POST',       
         headers: {
             'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ function signup(event){
             msg.innerText = res.errmsg
         } else {
            alert("注册成功");
-           window.location.href='http://localhost/task3/index.html';
+           window.location.href='index.html';
         }
     })
 }

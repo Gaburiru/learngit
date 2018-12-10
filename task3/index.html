@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>留言板注册</title>
-
+    <title>留言板</title>
     <style type="text/css">
         * {
             box-sizing: border-box;
@@ -76,26 +75,14 @@
             width: 400px;
         }
 
-        .back {
-            position: absolute;
-            right: 1%;
-            top: 1%;
-            
-        }
-
-        a {
-            TEXT-DECORATION: none;
-            color: brown;
-        }
-
-        .remsg {
-            width: 30%;
+        .sign {
             display: flex;
             justify-content: center;
-            color: white;
-            padding: 2%;
-            position: relative;
-            left: 35%;
+
+        }
+        a {
+            TEXT-DECORATION: none;
+            color: blue;
         }
     </style>
 </head>
@@ -106,25 +93,24 @@
     </div>
     <div class="wrap">
         <div class="container">
-            <form class="sign" id="signup_form">
+            <h1>Welcome</h1>
 
-                <input type="text" class="" id="username" name="username" placeholder="username" required>
-                <input type="password" class="" id="password" name="password" placeholder="password" required>
-                <input type="password" class="" id="checkpwd" name="checkpwd" placeholder="check your password"
-                    required>
-
-                <input type="submit" class="" value="注册">
+            <form id="login_form">
+                <input type="text" id="username" name="username" placeholder="username" required>
+                <input type="password" id="password" name="password" placeholder="password" required>
+                <input type="submit" id="sub" class="sub" value="登陆">
 
             </form>
-            <div id="result-msg" class="remsg"></div>
-
+            
+            <div id="sign" class="sign">
+                <p id="signup"><a href="signup.html">用户注册</a></p>
+            </div>
         </div>
-        <div class="back">
-            <a href="index.html">返回登陆</a>
-        </div>
-
     </div>
-    <script src="signup.js"></script>
+
+    <script src="login.js"></script>
+
+
 </body>
 
 </html>

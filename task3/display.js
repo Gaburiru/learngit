@@ -17,7 +17,7 @@ function HTMLEncode(html) {
 var msg = document.getElementById("block");
 
 function display() {
-    fetch('http://localhost/task3/display.php')
+    fetch('display.php')
         .then(response => response.json())
         .catch((error) => {
             msg.innerText = error
@@ -60,7 +60,7 @@ display();
 var sub = document.getElementById("logout");
 sub.addEventListener('click', function zx() {
     if(confirm("是否确定注销？")){
-        fetch('http://localhost/task3/zx.php')
+        fetch('zx.php')
         .then(response => response.json())
         .catch((error) => {
             alert(error);
@@ -68,7 +68,7 @@ sub.addEventListener('click', function zx() {
         .then((res) => {
             alert(res.msg);
             location.reload()
-            window.location.href='http://localhost/task3/index.html';
+            window.location.href='index.html';
         })
     }
     

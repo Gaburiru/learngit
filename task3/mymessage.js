@@ -28,7 +28,7 @@ function htmlEncode(c){
         }
 }
 var msg = document.getElementById("my-msg");
-fetch('http://localhost/task3/mymessage.php')
+fetch('mymessage.php')
     .then(response => response.json())
     .catch((error) => {
         msg.innerText = error
@@ -36,7 +36,7 @@ fetch('http://localhost/task3/mymessage.php')
     .then((res) => {
 
         if (res[0].errcode != 0) {
-            msg.innerHTML = ('<a href=http://localhost/task3/index.html>'+res[0].message+'</a>')
+            msg.innerHTML = ('<a href=index.html>'+res[0].message+'</a>')
         }
         else {
             for (var i = 0; i < res.length; i++) {
@@ -61,7 +61,7 @@ fetch('http://localhost/task3/mymessage.php')
                         var getmsg=this.parentNode.childNodes[1].childNodes[1].innerText;
                         var gettime=this.parentNode.childNodes[2].childNodes[1].innerText;  
                         //console.log(JSON.stringify({"message": getmsg,"time": gettime}))              
-                        fetch('http://localhost/task3/delete.php', {
+                        fetch('delete.php', {
                             method: 'POST',
                             body: JSON.stringify({"message": getmsg,"time": gettime})
                         })

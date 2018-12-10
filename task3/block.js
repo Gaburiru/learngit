@@ -9,7 +9,7 @@ function ly(event) {
     //console.log(inp);
     let formdata = new FormData()
     formdata.append('message',inp)
-    fetch('http://localhost/task3/block.php', {
+    fetch('block.php', {
         method: 'POST',        
         body:formdata
     })

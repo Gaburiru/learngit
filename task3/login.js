@@ -7,7 +7,7 @@ function login(event) {
     const formEntries = new FormData(login_form).entries();
     const json = Object.assign(...Array.from(formEntries, ([x, y]) => ({ [x]: y })));
 
-    fetch('http://localhost/task3/login.php', {
+    fetch('login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ function login(event) {
                 var sign=document.getElementById("sign");
                 var signup=document.getElementById("signup");
                 sign.removeChild(signup);*/
-                window.location.href='http://localhost/task3/block.html';
+                window.location.href='block.html';
 
 
 
